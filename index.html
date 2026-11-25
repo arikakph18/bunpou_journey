@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10152f"><meta name="description" content="Bunpou Journey — anime adventure Japanese learning app">
+<title>Bunpou Journey</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Oxanium:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="glow g1"></div>
+<div class="glow g2"></div>
+<main id="authView" class="auth">
+ <section class="auth-visual">
+    <div class="brand"><b class="brand-icon">文</b><span>BUNPOU<br><small>JOURNEY</small></span></div>
+  <div class="visual-copy">
+    <label>YOUR JAPANESE ADVENTURE</label>
+    <h1>Level up<br>your <em>Japanese.</em></h1>
+    <p>Ubah latihan bunpou jadi petualangan. Selesaikan misi, kumpulkan XP, dan buka level berikutnya.</p>
+   <div class="orb">
+    <div class="orb-ring"></div>
+    <div class="orb-core">文</div>
+    <i class="orb-tag t1">N5 QUEST</i>
+    <i class="orb-tag t2">+ XP</i>
+    <i class="orb-tag t3">LEVEL UP!</i>
+    </div>
+  </div><small class="jp-quote">小さな一歩が、大きな進歩になる。</small>
+ </section>
+
+ <section class="auth-side">
+    <div class="mobile-brand"><b class="brand-icon">文</b><strong>BUNPOU JOURNEY</strong></div>
+  <div class="auth-card">
+    <div class="tabs">
+        <button class="tab active" data-tab="login">Masuk</button>
+        <button class="tab" data-tab="register">Daftar</button>
+    </div>
+   <div id="loginBox">
+    <label class="eyebrow">WELCOME BACK, PLAYER</label>
+    <h2>Lanjutkan perjalananmu</h2>
+    <p class="muted">Masuk untuk menyimpan progres belajarmu.</p>
+    <form id="loginForm" class="form">
+        <label>Email<input id="loginEmail" type="email" autocomplete="email" placeholder="nama@email.com" required></label>
+        <label>Password<input id="loginPassword" type="password" autocomplete="current-password" placeholder="Masukkan password" required></label>
+        <button class="btn primary" type="submit">Masuk ke Journey ↗</button>
+    </form>
+    <button id="forgot" class="link">Lupa password?</button>
+   </div>
+   <div id="registerBox" class="hide">
+    <label class="eyebrow">CREATE YOUR PLAYER ID</label>
+    <h2>Mulai petualanganmu</h2>
+    <p class="muted">Buat akun untuk menyimpan XP dan progres.</p>
+    <form id="registerForm" class="form">
+        <label>Nama pengguna<input id="regName" maxlength="30" placeholder="Nama yang ingin ditampilkan" required></label>
+        <label>Email<input id="regEmail" type="email" placeholder="nama@email.com" required></label>
+        <label>Password<input id="regPassword" type="password" minlength="6" placeholder="Minimal 6 karakter" required></label>
+        <button class="btn primary" type="submit">Buat akun ↗</button></form>
+   </div>
+   <div id="authMessage" class="notice hide"></div>
+   <p class="auth-hint">✦ Login dan progres cloud aktif setelah Firebase dikonfigurasi.</p>
+  </div>
+  <footer>Made with ♡ by <b>Arika Karpina</b></footer>
+ </section>
+</main>
+
+<div id="appView" class="app hide">
+ <aside id="sidebar" class="sidebar">
+    <div class="brand side-brand">
+        <b class="brand-icon">文</b><span>BUNPOU<br><small>JOURNEY</small></span>
+    </div>
+  <div class="player-mini">
+    <div class="avatar" id="sideAvatar">P</div>
+    <div><b id="sideName">Player</b><small id="sideLevel">Level 1 · Rookie</small>
+    </div><i></i>
+</div>
+  <nav>
+    <label>JOURNEY</label>
+    <button class="nav active" data-page="home">⌂ <span>Dashboard</span></button>
+    <button class="nav" data-page="learn">文 <span>Bunpou Dojo</span></button>
+    <button class="nav" data-page="games">⚔ <span>Mini Games</span></button>
+    <button class="nav" data-page="review">↻ <span>Review Library</span></button>
+    <button class="nav" data-page="roadmap">◇ <span>Roadmap JLPT</span></button>
+    <label class="nav-gap">PLAYER</label>
+    <button class="nav" data-page="badges">✧
+         <span>Achievements</span></button>
+         <button class="nav" data-page="profile">◎ <span>Profile & Settings</span></button>
+</nav>
+  <div class="side-bottom">
+    <div class="quote">「継続は力なり」<small>Konsistensi adalah kekuatan.</small></div>
+    <button id="logout" class="logout">↪ Keluar akun</button>
+</div>
+ </aside>
+ <section class="main">
+    <header class="topbar">
+        <button id="menu" class="menu">☰</button>
+        <div class="crumb">JOURNEY <b id="crumb">/ Dashboard</b></div>
+        <div class="top-stats"><span>🔥 <b id="streakTop">0</b></span><span>✦ <b id="xpTop">0</b> XP</span>
+            <button id="topAvatar" class="avatar">P</button>
+        </div>
+    </header>
+ <div class="content">
+  <section class="page active" id="page-home"><div class="welcome"><div><label class="eyebrow">YOUR ADVENTURE STARTS HERE</label><h1>おかえり, <span id="welcomeName">Player</span>! <i>✦</i></h1><p class="muted">Satu misi kecil hari ini, satu langkah lebih dekat ke tujuanmu.</p></div><time id="date"></time></div>
+   <div class="hero"><div class="hero-text"><label>✦ DAILY QUEST · JLPT N5</label><h2 id="heroTitle">Foundation Arc</h2><p id="heroDesc">Selesaikan lima pola bunpou untuk menuntaskan misi.</p><div class="daily"><div><b id="dailyCount">0/5 mastered</b><b id="dailyPct">0%</b></div><div class="track"><i id="dailyBar"></i></div></div><button class="btn primary" data-go="learn">Lanjutkan belajar →</button></div><div class="hero-art"><div class="moon"></div><div class="mount back"></div><div class="mount front"></div><div class="sigil">文</div><span class="spark s1">✦</span><span class="spark s2">✧</span><small>N5 · BEGINNER ARC</small></div></div>
+   <div class="stats"><article><i class="ico orange">✦</i><div><small>TOTAL EXPERIENCE</small><b id="xpStat">0 XP</b><em>Keep earning XP</em></div></article><article><i class="ico pink">🔥</i><div><small>LEARNING STREAK</small><b id="streakStat">0 days</b><em>Come back tomorrow</em></div></article><article><i class="ico blue">文</i><div><small>MASTERED PATTERNS</small><b id="masteredStat">0 / 20</b><em>Small steps matter</em></div></article><article><i class="ico violet">♜</i><div><small>PLAYER LEVEL</small><b id="levelStat">Level 1</b><em id="levelTitle">Rookie</em></div></article></div>
+   <div class="section-title"><div><label class="eyebrow">YOUR NEXT MOVE</label><h2>Quest board</h2></div><button class="link" data-go="roadmap">Lihat roadmap →</button></div>
+   <div class="quests"><article><div class="quest-icon">文</div><div><label>MAIN QUEST</label><h3>Master the Bunpou</h3><p>Pelajari lima pola dan tandai setelah benar-benar paham.</p><button data-go="learn">Mulai →</button></div></article><article><div class="quest-icon purple">⚔</div><div><label>SIDE QUEST</label><h3>Training Arena</h3><p>Latih ingatanmu lewat kuis dan mini games.</p><button data-go="games">Main →</button></div></article></div>
+   <div class="section-title"><div><label class="eyebrow">YOUR PROGRESS</label><h2>Learning path</h2></div></div><div class="path"><div class="node current"><b>五</b><strong>JLPT N5</strong><small>Beginner</small></div><i></i><div class="node locked"><b>四</b><strong>JLPT N4</strong><small>Coming next</small></div><i></i><div class="node locked"><b>三</b><strong>JLPT N3</strong><small>Locked</small></div><i></i><div class="node locked"><b>二</b><strong>JLPT N2</strong><small>Locked</small></div></div>
+  </section>
+  <section class="page" id="page-learn"><div class="page-intro"><label class="eyebrow">THE GRAMMAR DOJO</label><h1>Bunpou <em>Dojo</em></h1><p class="muted">Kuasai pola satu per satu. Paket berikutnya terbuka setelah lima pola dikuasai.</p></div><div class="learn-layout"><div class="lesson-box"><div class="lesson-head"><div><label>YOUR CURRENT QUEST</label><h2 id="packTitle">Package 1 · Foundation Arc</h2></div><span id="packBadge">PACKAGE 01 / 04</span></div><div id="lessonList"></div></div><aside class="learn-aside"><div class="aside-card"><label class="eyebrow">QUEST PROGRESS</label><div id="ring" class="ring"><b id="ringPct">0%</b></div><h3>Mastery status</h3><p id="ringText">0 dari 5 pola dikuasai.</p><div class="reward">✦ <b>+50 XP</b><small>Complete all 5 patterns</small></div></div><div class="aside-card"><b>灯 Dojo tip</b><p>Dengarkan contoh, baca artinya, lalu buat kalimat sendiri sebelum menandai pola mastered.</p></div></aside></div></section>
+  <section class="page" id="page-games"><div class="page-intro"><label class="eyebrow">TRAINING ARENA</label><h1>Mini <em>Games</em></h1><p class="muted">Latih pemahamanmu. Setiap permainan memberi XP sesuai jawaban benar.</p></div><div class="game-grid"><article><div class="game-art a1">文 ✦</div><div class="game-body"><label>WORD KNOWLEDGE</label><h3>Meaning Match</h3><p>Pilih arti yang tepat dari pola bunpou.</p><div>5 Questions <b>+20 XP</b></div><button class="btn primary full" data-game="meaning">Play game →</button></div></article><article><div class="game-art a2">組 ⚔</div><div class="game-body"><label>GRAMMAR TRAINING</label><h3>Grammar Battle</h3><p>Uji pemahamanmu lewat pertanyaan acak.</p><div>5 Questions <b>+25 XP</b></div><button class="btn primary full" data-game="grammar">Play game →</button></div></article><article><div class="game-art a3">速 ⌁</div><div class="game-body"><label>SPEED CHALLENGE</label><h3>Time Attack</h3><p>Jawab lima soal sebelum waktu habis.</p><div>30 Seconds <b>+30 XP</b></div><button class="btn primary full" data-game="time">Play game →</button></div></article></div><div id="gameStage" class="game-stage hide"></div></section>
+  <section class="page" id="page-review"><div class="page-intro"><label class="eyebrow">MEMORY SHRINE</label><h1>Review <em>Library</em></h1><p class="muted">Buka kembali pola yang sudah dan belum kamu kuasai.</p></div><div class="filter"><span id="reviewCount">20 patterns</span><select id="reviewFilter"><option value="all">Semua pola</option><option value="mastered">Sudah dikuasai</option><option value="learning">Belum dikuasai</option></select></div><div id="reviewGrid" class="review-grid"></div></section>
+  <section class="page" id="page-roadmap"><div class="page-intro"><label class="eyebrow">THE LONG JOURNEY</label><h1>JLPT <em>Roadmap</em></h1><p class="muted">Perjalanan bertahap dari pemula menuju level menengah.</p></div><div class="roadmap"><article class="current"><b>N5</b><div><label>CURRENT ARC</label><h3>Beginner · Foundation</h3><p>Materi awal tersedia dalam empat paket berisi 20 pola.</p><div class="track"><i id="roadBar"></i></div><small id="roadText">0 / 20 patterns mastered</small></div><span>IN PROGRESS</span></article><article class="locked"><b>N4</b><div><label>NEXT ARC</label><h3>Elementary</h3><p>Materi N4 belum tersedia di versi ini.</p></div><span>LOCKED</span></article><article class="locked"><b>N3</b><div><label>FUTURE ARC</label><h3>Intermediate</h3><p>Konten N3 belum tersedia.</p></div><span>LOCKED</span></article><article class="locked"><b>N2</b><div><label>FUTURE ARC</label><h3>Upper Intermediate</h3><p>Konten N2 belum tersedia.</p></div><span>LOCKED</span></article></div><p class="road-note">Catatan: versi ini berisi 20 pola N5 sebagai materi awal, bukan seluruh silabus resmi JLPT.</p></section>
+  <section class="page" id="page-badges"><div class="page-intro"><label class="eyebrow">COLLECTION ROOM</label><h1>Your <em>Achievements</em></h1><p class="muted">Badge terbuka seiring perjalanan belajarmu.</p></div><div id="badgeGrid" class="badge-grid"></div></section>
+  <section class="page" id="page-profile"><div class="page-intro"><label class="eyebrow">PLAYER CONFIGURATION</label><h1>Player <em>Profile</em></h1><p class="muted">Atur identitas dan lihat ringkasan perjalananmu.</p></div><div class="profile-layout"><div class="profile-card"><div id="largeAvatar" class="large-avatar">P</div><h2 id="profileName">Player</h2><p id="profileEmail" class="muted"></p><span id="profileLevel" class="chip">LEVEL 1 · ROOKIE</span></div><div class="settings"><h3>Profile settings</h3><form id="profileForm" class="form"><label>Display name<input id="profileInput" maxlength="30" required></label><button class="btn primary">Simpan nama</button></form><hr><h3>Account</h3><p class="muted">Akun login dikelola oleh Firebase Authentication.</p><button id="resetProfile" class="btn secondary">Kirim link reset password</button></div></div></section>
+ </div><footer class="app-footer">BUNPOU JOURNEY <span>Made with ♡ by <b>Arika Karpina</b></span></footer></section>
+</div>
+<div id="patternModal" class="modal hide"><div class="backdrop" data-close="patternModal"></div><div class="modal-card"><button class="close" data-close="patternModal">×</button><label class="eyebrow">BUNPOU DETAIL</label><div id="patternDetail"></div></div></div>
+<div id="toast" class="toast"></div>
+<script type="module" src="js/app.js"></script>
+</body></html>
